@@ -54,6 +54,8 @@ body {
   padding: 0.3em;
 }
 
+#dot,
+#equals,
 .btn--number,
 .btn--operator {
   width: 2em;

@@ -71,19 +71,82 @@ deleteBtn.addEventListener('click', () => {
 });
 
 addBtn.addEventListener('click', () => {
-  display.textContent += '+';
+  if (display.textContent.indexOf('+') === -1 &&
+      display.textContent.indexOf('-') === -1 &&
+      display.textContent.indexOf('*') === -1 &&
+      display.textContent.indexOf('/') === -1) {
+    display.textContent += ' + ';
+  } else if (display.textContent.split(' ').length === 3) {
+    let displayArray = display.textContent.split(' ');
+    display.textContent = operate(parseFloat(displayArray[0]), 
+                                           displayArray[1],
+                                  parseFloat(displayArray[2])).toFixed(2) + ' + ';
+  }
 });
 
 subtractBtn.addEventListener('click', () => {
-  display.textContent += '-';
+  if (display.textContent.indexOf('+') === -1 &&
+      display.textContent.indexOf('-') === -1 &&
+      display.textContent.indexOf('*') === -1 &&
+      display.textContent.indexOf('/') === -1) {
+    display.textContent += ' - ';
+  } else if (display.textContent.split(' ').length === 3) {
+    let displayArray = display.textContent.split(' ');
+    display.textContent = operate(parseFloat(displayArray[0]), 
+                                           displayArray[1],
+                                  parseFloat(displayArray[2])).toFixed(2) + ' - ';
+  }
 });
 
 multiplyBtn.addEventListener('click', () => {
-  display.textContent += '*';
+  if (display.textContent.indexOf('+') === -1 &&
+      display.textContent.indexOf('-') === -1 &&
+      display.textContent.indexOf('*') === -1 &&
+      display.textContent.indexOf('/') === -1) {
+    display.textContent += ' * ';
+  } else if (display.textContent.split(' ').length === 3) {
+    let displayArray = display.textContent.split(' ');
+    display.textContent = operate(parseFloat(displayArray[0]), 
+                                           displayArray[1],
+                                  parseFloat(displayArray[2])).toFixed(2) + ' * ';
+  }
 });
 
 divideBtn.addEventListener('click', () => {
-  display.textContent += '/';
+  if (display.textContent.indexOf('+') === -1 &&
+      display.textContent.indexOf('-') === -1 &&
+      display.textContent.indexOf('*') === -1 &&
+      display.textContent.indexOf('/') === -1) {
+    display.textContent += ' / ';
+  } else if (display.textContent.split(' ').length === 3) {
+    let displayArray = display.textContent.split(' ');
+    display.textContent = operate(parseFloat(displayArray[0]), 
+                                           displayArray[1],
+                                  parseFloat(displayArray[2])).toFixed(2) + ' / ';
+  }
+});
+
+dotBtn.addEventListener('click', () => {
+  let displayArray = display.textContent.split(' ');
+  if (displayArray.length === 1) {
+    if (display.textContent.indexOf('.') === -1) {
+      display.textContent += '.';
+    }
+  } else if (displayArray.length === 3) {
+    if (displayArray[2].indexOf('.') === -1) {
+      displayArray[2] += '.';
+      display.textContent = displayArray.join(' ');
+    }
+  }
+});
+
+equalsBtn.addEventListener('click', () => {
+  if (display.textContent.split(' ').length === 3) {
+    let displayArray = display.textContent.split(' ');
+    display.textContent = operate(parseFloat(displayArray[0]), 
+                                           displayArray[1],
+                                  parseFloat(displayArray[2])).toFixed(2);
+  }
 });
 
 // functions

@@ -79,7 +79,7 @@ addBtn.addEventListener('click', () => {
   } else if (display.textContent.split(' ').length === 3) {
     let displayArray = display.textContent.split(' ');
     display.textContent = operate(parseFloat(displayArray[0]), 
-                                           displayArray[1],
+                                             displayArray[1],
                                   parseFloat(displayArray[2])).toFixed(2) + ' + ';
   }
 });
@@ -93,7 +93,7 @@ subtractBtn.addEventListener('click', () => {
   } else if (display.textContent.split(' ').length === 3) {
     let displayArray = display.textContent.split(' ');
     display.textContent = operate(parseFloat(displayArray[0]), 
-                                           displayArray[1],
+                                             displayArray[1],
                                   parseFloat(displayArray[2])).toFixed(2) + ' - ';
   }
 });
@@ -107,7 +107,7 @@ multiplyBtn.addEventListener('click', () => {
   } else if (display.textContent.split(' ').length === 3) {
     let displayArray = display.textContent.split(' ');
     display.textContent = operate(parseFloat(displayArray[0]), 
-                                           displayArray[1],
+                                             displayArray[1],
                                   parseFloat(displayArray[2])).toFixed(2) + ' * ';
   }
 });
@@ -121,7 +121,7 @@ divideBtn.addEventListener('click', () => {
   } else if (display.textContent.split(' ').length === 3) {
     let displayArray = display.textContent.split(' ');
     display.textContent = operate(parseFloat(displayArray[0]), 
-                                           displayArray[1],
+                                             displayArray[1],
                                   parseFloat(displayArray[2])).toFixed(2) + ' / ';
   }
 });
@@ -144,7 +144,7 @@ equalsBtn.addEventListener('click', () => {
   if (display.textContent.split(' ').length === 3) {
     let displayArray = display.textContent.split(' ');
     display.textContent = operate(parseFloat(displayArray[0]), 
-                                           displayArray[1],
+                                             displayArray[1],
                                   parseFloat(displayArray[2])).toFixed(2);
   }
 });
